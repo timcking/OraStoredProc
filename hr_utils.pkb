@@ -1,0 +1,30 @@
+CREATE OR REPLACE PACKAGE BODY hr_utils AS
+/******************************************************************************
+   NAME:       hr_utils
+   PURPOSE:
+
+   REVISIONS:
+   Ver        Date        Author           Description
+   ---------  ----------  ---------------  ------------------------------------
+   1.0        7/1/2012             1. Created this package body.
+******************************************************************************/
+
+  FUNCTION MyFunction(Param1 IN NUMBER) RETURN NUMBER IS
+  BEGIN
+    RETURN Param1;
+  END;
+
+  PROCEDURE get_emp_rs (
+   p_deptid      IN       employees.department_id%TYPE,
+   p_recordset   OUT      sys_refcursor
+   ) IS
+    BEGIN
+       OPEN p_recordset FOR
+            SELECT first_name, last_name, job_id
+              FROM employees
+             WHERE department_id = p_deptid
+          ORDER BY last_name;
+    END get_emp_rs;
+
+END hr_utils;
+/

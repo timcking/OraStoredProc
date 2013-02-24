@@ -1,0 +1,21 @@
+CREATE OR REPLACE PACKAGE hr_utils AS
+/******************************************************************************
+   NAME:       hr_utils
+   PURPOSE:
+
+   REVISIONS:
+   Ver        Date        Author           Description
+   ---------  ----------  ---------------  ------------------------------------
+   1.0        7/1/2012             1. Created this package.
+******************************************************************************/
+
+  FUNCTION MyFunction(Param1 IN NUMBER) RETURN NUMBER;
+ 
+  PROCEDURE get_emp_rs (
+   p_deptid      IN       employees.department_id%TYPE,
+   p_recordset   OUT      sys_refcursor
+   );
+
+END hr_utils;
+
+/
