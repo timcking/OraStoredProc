@@ -7,12 +7,13 @@ CREATE OR REPLACE PACKAGE BODY hr_utils AS
    Ver        Date        Author           Description
    ---------  ----------  ---------------  ------------------------------------
    1.0        7/1/2012             1. Created this package body.
+   1.1        3/18/2018               Removed unused function
 ******************************************************************************/
 
-  FUNCTION MyFunction(Param1 IN NUMBER) RETURN NUMBER IS
+/*   FUNCTION MyFunction(Param1 IN NUMBER) RETURN NUMBER IS
   BEGIN
     RETURN Param1;
-  END;
+  END; */
 
   PROCEDURE get_emp_rs (
    p_deptid      IN       employees.department_id%TYPE,
