@@ -1,10 +1,11 @@
 import cx_Oracle
 import sys
 
-def connect_ora(l_passwd):
+def connect_ora():
     error_msg = ""
     try:
-        connection = cx_Oracle.connect('hr', l_passwd, 'orcl')
+        # Just a demo db, don't worry about the password
+        connection = cx_Oracle.connect('hr', 'hr', 'orcl')
         # we need first cursor for callproc
         cursor = connection.cursor()
         # and second one for refcursor OUT parameter from PL/SQL proc
@@ -24,14 +25,13 @@ def find_employees(p_deptid, cursor, ref_cursor):
     return ref_cursor
 
 if __name__ == "__main__":
-    if len(sys.argv) <> 3:
-        print 'Usage: ' + sys.argv[0] + ' department_id password'
+    if len(sys.argv) <> 2:
+        print 'Usage: ' + sys.argv[0] + ' department_id'
         sys.exit(1)
     else:
         l_deptid = int(sys.argv[1])
-        l_passwd = sys.argv[2]
         
-    cursor, ref_cursor = connect_ora(l_passwd)
+    cursor, ref_cursor = connect_ora()
     if cursor == None:
         sys.exit(1)
     

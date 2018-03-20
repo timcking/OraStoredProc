@@ -15,7 +15,7 @@
             "env": {},
             "envFile": "${workspaceFolder}/.env",
             "args": [
-                "30", "hr"
+                "30"
             ],
             "debugOptions": [
                 "RedirectOutput"
