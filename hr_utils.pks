@@ -10,8 +10,6 @@ CREATE OR REPLACE PACKAGE hr_utils AS
    1.1        3/18/2018               Removed unused function
 ******************************************************************************/
 
- -- FUNCTION MyFunction(Param1 IN NUMBER) RETURN NUMBER;
- 
   PROCEDURE get_emp_rs (
    p_deptid      IN       employees.department_id%TYPE,
    p_recordset   OUT      sys_refcursor
