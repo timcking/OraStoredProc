@@ -5,6 +5,7 @@ DECLARE
    v_jobid    employees.job_id%TYPE;
    
 BEGIN
+   DBMS_OUTPUT.ENABLE;
    hr_utils.get_emp_rs (p_deptid => 80, p_recordset => v_cursor);
 
    LOOP

@@ -11,8 +11,8 @@ CREATE OR REPLACE PACKAGE hr_utils AS
 ******************************************************************************/
 
   PROCEDURE get_emp_rs (
-   p_deptid      IN       employees.department_id%TYPE,
-   p_recordset   OUT      sys_refcursor
+    p_deptid      IN       employees.department_id%TYPE,
+    p_recordset   OUT      sys_refcursor
    );
 
 END hr_utils;
