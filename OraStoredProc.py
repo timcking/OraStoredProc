@@ -5,7 +5,7 @@ def connect_ora():
     error_msg = ""
     try:
         # Just a demo db, don't worry about the password
-        connection = cx_Oracle.connect('hr', 'maxcat', 'xe')
+        connection = cx_Oracle.connect('hr', 'hr', 'orcl')
         # we need first cursor for callproc
         cursor = connection.cursor()
         # and second one for refcursor OUT parameter from PL/SQL proc

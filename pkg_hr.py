@@ -8,7 +8,7 @@ class pkg_hr:
   '''
   # def __enter__(self):
   def __init__(self):
-    self.__db = cx_Oracle.Connection('hr', 'maxcat', 'xe')
+    self.__db = cx_Oracle.Connection('hr', 'hr', 'orcl')
     self.__cursor = self.__db.cursor()
     # return self
     return None

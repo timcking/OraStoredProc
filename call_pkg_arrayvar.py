@@ -10,7 +10,7 @@ if __name__ == "__main__":
         l_deptid = int(sys.argv[1])
     """
 
-    db = cx_Oracle.connect('hr', 'maxcat', 'xe')
+    db = cx_Oracle.connect('hr', 'hr', 'orcl')
     cursor = db.cursor()
     L = cursor.arrayvar(cx_Oracle.NUMBER, [1, 2, 3])
 
